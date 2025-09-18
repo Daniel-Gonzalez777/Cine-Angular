@@ -116,17 +116,13 @@ export class Estrenocard implements OnInit {
       }
     ];
     
-    // Extraer géneros únicos para los botones de filtro
     this.generosDisponibles = this.obtenerGenerosUnicos();
   }
 
-  // Obtener géneros únicos de todos los estrenos
   obtenerGenerosUnicos(): string[] {
     const generos = new Set<string>();
     this.estrenos.forEach(estreno => {
-      // Dividir géneros por "/" y agregar cada uno
       estreno.genero.split('/').forEach(genero => {
-        // Normalizar el género: primera letra mayúscula, resto minúscula
         const generoNormalizado = genero.trim().charAt(0).toUpperCase() + 
                                  genero.trim().slice(1).toLowerCase();
         generos.add(generoNormalizado);
@@ -135,13 +131,11 @@ export class Estrenocard implements OnInit {
     return Array.from(generos).sort();
   }
 
-  // Filtrar estrenos por género
   get estrenosFiltrados(): Estreno[] {
     if (this.generoSeleccionado === 'todos') {
       return this.estrenos;
     }
     return this.estrenos.filter(estreno => {
-      // Normalizar el género del estreno para comparar
       const generosEstreno = estreno.genero.split('/').map(g => 
         g.trim().charAt(0).toUpperCase() + g.trim().slice(1).toLowerCase()
       );
@@ -149,12 +143,10 @@ export class Estrenocard implements OnInit {
     });
   }
 
-  // Cambiar género seleccionado
   cambiarGenero(genero: string) {
     this.generoSeleccionado = genero;
   }
 
-  // Función para obtener estilos dinámicos según el género
   getEstilosGenero(genero: string) {
     const coloresGenero: { [key: string]: any } = {
       'Acción': { 'background-color': '#ff5722', 'color': 'white' },
@@ -170,7 +162,6 @@ export class Estrenocard implements OnInit {
     return coloresGenero[genero] || { 'background-color': '#607d8b', 'color': 'white' };
   }
 
-  // Función para obtener clases CSS dinámicas según el género
   getClasesGenero(genero: string) {
     const clasesGenero: { [key: string]: string } = {
       'Acción': 'genero-accion',
@@ -186,7 +177,6 @@ export class Estrenocard implements OnInit {
     return clasesGenero[genero] || 'genero-default';
   }
 
-  // Función para obtener clases del botón según el género
   getClasesBotonTrailer(genero: string) {
     const clasesBoton: { [key: string]: string } = {
       'Acción': 'boton-accion',

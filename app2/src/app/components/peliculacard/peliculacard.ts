@@ -185,17 +185,13 @@ export class Peliculacard implements OnInit {
       }
     ];
     
-    // Extraer géneros únicos para los botones de filtro
     this.generosDisponibles = this.obtenerGenerosUnicos();
   }
 
-  // Obtener géneros únicos de todas las películas
   obtenerGenerosUnicos(): string[] {
     const generos = new Set<string>();
     this.peliculas.forEach(pelicula => {
-      // Dividir géneros por "/" y agregar cada uno
       pelicula.genero.split('/').forEach(genero => {
-        // Normalizar el género: primera letra mayúscula, resto minúscula
         const generoNormalizado = genero.trim().charAt(0).toUpperCase() + 
                                  genero.trim().slice(1).toLowerCase();
         generos.add(generoNormalizado);
@@ -204,13 +200,11 @@ export class Peliculacard implements OnInit {
     return Array.from(generos).sort();
   }
 
-  // Filtrar películas por género
   get peliculasFiltradas(): Pelicula[] {
     if (this.generoSeleccionado === 'todos') {
       return this.peliculas;
     }
     return this.peliculas.filter(pelicula => {
-      // Normalizar el género de la película para comparar
       const generosPelicula = pelicula.genero.split('/').map(g => 
         g.trim().charAt(0).toUpperCase() + g.trim().slice(1).toLowerCase()
       );
@@ -218,17 +212,14 @@ export class Peliculacard implements OnInit {
     });
   }
 
-  // Cambiar género seleccionado
   cambiarGenero(genero: string) {
     this.generoSeleccionado = genero;
   }
 
-  // Mostrar/ocultar descripciones
   toggleDescripciones() {
     this.mostrarDescripciones = !this.mostrarDescripciones;
   }
 
-  // Función para obtener clases CSS dinámicas según la calificación
   getClasesCalificacion(calificacion: number) {
     if (calificacion >= 8.0) return 'calificacion-excelente';
     if (calificacion >= 7.0) return 'calificacion-buena';
@@ -236,13 +227,11 @@ export class Peliculacard implements OnInit {
     return 'calificacion-mala';
   }
 
-  // Función para obtener clases del botón según la calidad
   getClasesBoton(esBuena: boolean) {
     return esBuena ? 'boton-buena' : 'boton-mala';
   }
 
 
-  // Función para obtener el texto de la calificación
   getCalificacionTexto(calificacion: number): string {
     if (calificacion >= 8.0) return 'Excelente';
     if (calificacion >= 7.0) return 'Buena';
@@ -250,7 +239,6 @@ export class Peliculacard implements OnInit {
     return 'Mala';
   }
 
-  // Función para obtener estilos dinámicos según la calificación
   getEstilosCalificacion(calificacion: number) {
     if (calificacion >= 8.0) {
       return {

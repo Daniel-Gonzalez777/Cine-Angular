@@ -58,7 +58,6 @@
   background: linear-gradient(45deg, #ffd700, #f5c518);
 }
 
-/* Estilos para películas buenas y malas */
 .pelicula-buena {
   border: 2px solid #4caf50;
   box-shadow: 0 6px 14px rgba(76, 175, 80, 0.3);
@@ -69,7 +68,6 @@
   box-shadow: 0 6px 14px rgba(244, 67, 54, 0.3);
 }
 
-/* Contenedor de calificación */
 .calificacion-container {
   position: absolute;
   top: 10px;
@@ -94,7 +92,6 @@
 }
 
 
-/* Información de la película */
 .info-pelicula {
   flex-grow: 1;
   text-align: left;
@@ -138,7 +135,6 @@
   overflow: hidden;
 }
 
-/* Badge de calidad */
 .badge-calidad {
   position: absolute;
   top: 10px;
@@ -161,7 +157,6 @@
   color: white;
 }
 
-/* Imagen de película */
 .imagen-pelicula {
   width: 100%;
   max-height: 300px;
@@ -171,13 +166,11 @@
   position: relative;
 }
 
-/* Mejoras en la tarjeta */
 .tarjeta {
   position: relative;
   overflow: hidden;
 }
 
-/* Efectos hover mejorados */
 .pelicula-buena:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 30px rgba(76, 175, 80, 0.4);
@@ -188,7 +181,6 @@
   box-shadow: 0 15px 30px rgba(244, 67, 54, 0.4);
 }
 
-/* Estilos para filtros de género */
 .filtros-genero {
   padding: 20px 30px;
   background: #1a1a2e;
@@ -257,7 +249,6 @@
   transform: translateY(-2px);
 }
 
-/* Clases dinámicas para calificaciones */
 .calificacion-excelente {
   background: linear-gradient(45deg, #4caf50, #8bc34a) !important;
   color: white !important;
@@ -282,7 +273,6 @@
   box-shadow: 0 4px 12px rgba(244, 67, 54, 0.4) !important;
 }
 
-/* Clases dinámicas para botones */
 .boton-buena {
   background: linear-gradient(45deg, #4caf50, #8bc34a) !important;
   color: white !important;
@@ -305,7 +295,6 @@
   transform: translateY(-2px) !important;
 }
 
-/* Estilos para loading */
 .loading-container {
   display: flex;
   flex-direction: column;
@@ -343,37 +332,3 @@
   font-size: 16px;
 }
 
-/* Responsive design mejorado */
-@media (max-width: 768px) {
-  .peliculas {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 15px;
-    padding: 20px;
-  }
-  
-  .calificacion-container {
-    min-width: 50px;
-    padding: 6px;
-  }
-  
-  .calificacion-numero {
-    font-size: 16px;
-  }
-  
-  .calificacion-texto {
-    font-size: 9px;
-  }
-  
-  .filtros-genero {
-    padding: 15px 20px;
-  }
-  
-  .botones-genero {
-    gap: 8px;
-  }
-  
-  .boton-genero {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-}

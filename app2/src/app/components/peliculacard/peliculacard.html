@@ -1,4 +1,3 @@
-<!-- Botones de filtro por género -->
 <div class="filtros-genero">
   <h3>Filtrar por género:</h3>
   <div class="botones-genero">
@@ -27,10 +26,8 @@
        [class.pelicula-buena]="peli.esBuena"
        [class.pelicula-mala]="!peli.esBuena">
     
-    <!-- Imagen de la película -->
     <img [src]="peli.img" [alt]="peli.titulo" class="imagen-pelicula">
     
-    <!-- Calificación visual -->
     <div class="calificacion-container" [ngClass]="getClasesCalificacion(peli.calificacion)">
       <div class="calificacion-numero">
         {{ peli.calificacion }}
@@ -40,7 +37,6 @@
       </div>
     </div>
     
-    <!-- Información de la película -->
     <div class="info-pelicula">
       <h3>{{ peli.titulo }}</h3>
       <p class="genero">{{ peli.genero }}</p>
@@ -49,12 +45,10 @@
       <p *ngIf="mostrarDescripciones" class="descripcion">{{ peli.descripcion }}</p>
     </div>
     
-    <!-- Badge de calidad -->
     <div class="badge-calidad" [class]="peli.esBuena ? 'buena' : 'mala'">
       {{ peli.esBuena ? '⭐ Buena' : '👎 Mala' }}
     </div>
     
-    <!-- Botón de compra -->
     <a routerLink="/comprarboletas" class="boton" [ngClass]="getClasesBoton(peli.esBuena)">
       Comprar
     </a>

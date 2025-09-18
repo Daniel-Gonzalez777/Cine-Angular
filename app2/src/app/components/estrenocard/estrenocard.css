@@ -116,7 +116,6 @@
   transform: translateY(0);
 }
 
-/* Estilos para filtros de género */
 .filtros-genero {
   padding: 20px 30px;
   background: #1a1a2e;
@@ -168,7 +167,6 @@
   font-style: italic;
 }
 
-/* Estilos adicionales para estrenos */
 .fecha-estreno {
   color: #ff6b6b !important;
   font-weight: bold;
@@ -196,7 +194,6 @@
   display: inline-block !important;
 }
 
-/* Clases dinámicas para géneros */
 .genero-accion {
   background: linear-gradient(45deg, #ff5722, #e64a19) !important;
   color: white !important;
@@ -251,7 +248,6 @@
   box-shadow: 0 2px 8px rgba(96, 125, 139, 0.3) !important;
 }
 
-/* Clases dinámicas para botones de tráiler según género */
 .boton-accion {
   background: linear-gradient(45deg, #ff5722, #e64a19) !important;
   color: white !important;
@@ -351,7 +347,6 @@
   transform: translateY(-2px) !important;
 }
 
-/* Estilos para loading */
 .loading-container {
   display: flex;
   flex-direction: column;
@@ -387,26 +382,4 @@
   color: #ccc;
   margin: 0;
   font-size: 16px;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .estrenos {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 15px;
-    padding: 20px;
-  }
-  
-  .filtros-genero {
-    padding: 15px 20px;
-  }
-  
-  .botones-genero {
-    gap: 8px;
-  }
-  
-  .boton-genero {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
 }
