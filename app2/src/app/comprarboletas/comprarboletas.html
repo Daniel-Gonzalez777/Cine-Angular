@@ -16,7 +16,7 @@
             required>
         </div>
 
-        <div class="campo">
+         <div class="campo">
           <label for="email">Email</label>
           <input 
             type="email" 
@@ -45,41 +45,49 @@
             [value]="cantidadBoletas()"
             (change)="onCantidadBoletasChange($event)"
             required>
-            <option *ngFor="let opcion of opcionesBoletas()" [value]="opcion.cantidad">
-              {{ opcion.texto }}
-            </option>
+            @for (opcion of opcionesBoletas(); track opcion) {
+              <option [value]="opcion.cantidad">
+                {{ opcion.texto }}
+              </option>
+            }
           </select>
         </div>
 
-        <div class="campo">
+         <div class="campo">
           <label for="cine">Cine</label>
           <select 
             id="cine" 
             [value]="cineSeleccionado()"
             (change)="onCineChange($event)"
             required>
-            <option *ngFor="let cine of cines()" [value]="cine.id">
-              {{ cine.nombre }}
-            </option>
+            @for (cine of cines(); track cine) {
+              <option [value]="cine.id">
+                {{ cine.nombre }}
+              </option>
+            }
           </select>
         </div>
 
-        <div class="campo">
+            <div class="campo">
           <label for="horario">Horario</label>
           <select 
             id="horario" 
             [value]="horarioSeleccionado()"
             (change)="onHorarioChange($event)"
             required>
-            <option *ngFor="let horario of horarios()" [value]="horario.id">
-              {{ horario.hora }}
-            </option>
+            @for (horario of horarios(); track horario) {
+              <option [value]="horario.id">
+                {{ horario.hora }}
+              </option>
+            }
           </select>
         </div>
 
-        <div class="total" *ngIf="precioTotal() > 0">
-          <strong>Total a pagar: ${{ precioTotal().toLocaleString('es-CO') }}</strong>
-        </div>
+         @if (precioTotal() > 0) {
+          <div class="total">
+            <strong>Total a pagar: ${{ precioTotal().toLocaleString('es-CO') }}</strong>
+          </div>
+        }
 
         <button 
           type="submit" 
