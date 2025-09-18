@@ -1,7 +1,6 @@
 [build]
-  base = "app2"
-  command = "npm run build"
-  publish = "dist/app2/browser"
+  command = "ng build --configuration production"
+  publish = "dist/tu-proyecto"
 
 [[redirects]]
   from = "/*"
