@@ -1,0 +1,24 @@
+<div class="busqueda">
+  <div class="barra">
+    
+    <div class="icono">
+      🎬
+    </div>
+    
+    <input
+      type="text"
+      class="entrada"
+      [placeholder]="placeholder()"
+      [value]="searchQuery()"
+      (input)="searchQuery.set($any($event.target).value)"
+      autocomplete="off"
+    >
+    
+    <div class="limpiar"></div>
+    
+    <button type="button" class="boton">
+      🔍
+    </button>
+    
+  </div>
+</div>

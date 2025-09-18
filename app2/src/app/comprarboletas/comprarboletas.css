@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.pagina {
+  background-color: #E0E0E0;
+  background-image: url(https://res.cloudinary.com/dzjp34qp8/image/upload/v1758148153/fondo_a0etgv.png);
+  background-size: cover;       
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  width: 1521px;
+  min-height: 100vh;  
+  margin-left: -8px;
+  margin-top: -8px;          
+}
+
+.compra {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f7f4;
+  min-height: 100vh;
+}
+
+.caja {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+  color: #e74c3c;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.campo input,
+.campo select {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  background-color: white;
+}
+
+.campo input:focus,
+.campo select:focus {
+  outline: none;
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.campo input::placeholder {
+  color: #999;
+}
+
+.campo select {
+  cursor: pointer;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"></polyline></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.campo select option:first-child {
+  color: #999;
+}
+
+.total {
+  background-color: #e8f5e8;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  color: #2d5a2d;
+  font-size: 18px;
+  border: 2px solid #4caf50;
+  font-weight: bold;
+}
+
+.boton {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.boton:hover:not(:disabled) {
+  background-color: #c0392b;
+  transform: translateY(-1px);
+}
+
+.boton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.boton:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.volver {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.link {
+  color: #e74c3c;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #c0392b;
+  text-decoration: underline;
+}

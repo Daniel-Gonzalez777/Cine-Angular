@@ -1,0 +1,31 @@
+<!-- Botones de filtro por género -->
+<div class="filtros-genero">
+  <h3>Filtrar estrenos por género:</h3>
+  <div class="botones-genero">
+    <button 
+      class="boton-genero" 
+      [class.activo]="generoSeleccionado === 'todos'"
+      (click)="cambiarGenero('todos')">
+      Todos
+    </button>
+    <button 
+      *ngFor="let genero of generosDisponibles" 
+      class="boton-genero"
+      [class.activo]="generoSeleccionado === genero"
+      (click)="cambiarGenero(genero)">
+      {{ genero }}
+    </button>
+  </div>
+</div>
+
+<div class="estrenos">
+  <div class="tarjeta-estreno" *ngFor="let estreno of estrenosFiltrados">
+    <img [src]="estreno.img" [alt]="estreno.titulo">
+    <h3>{{ estreno.titulo }}</h3>
+    <p [ngClass]="getClasesGenero(estreno.genero.split('/')[0].trim())" class="genero-con-estilo">{{ estreno.genero }}</p>
+    <p class="fecha-estreno">{{ estreno.fechaEstreno }}</p>
+    <p class="descripcion-estreno">{{ estreno.descripcion }}</p>
+    <span class="estreno-badge">Próximo Estreno</span>
+    <a [href]="estreno.trailer" target="_blank" class="boton-trailer" [ngClass]="getClasesBotonTrailer(estreno.genero.split('/')[0].trim())">Ver Tráiler</a>
+  </div>
+</div>

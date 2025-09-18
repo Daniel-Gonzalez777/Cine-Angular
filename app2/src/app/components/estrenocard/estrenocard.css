@@ -1,0 +1,412 @@
+.estrenos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.tarjeta-estreno {
+  background: linear-gradient(135deg, #1e1e2e, #2d2d4a);
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+  text-align: center;
+  padding: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.tarjeta-estreno::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.tarjeta-estreno:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.tarjeta-estreno img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-estreno:hover img {
+  transform: scale(1.05);
+}
+
+.tarjeta-estreno h3 {
+  margin: 8px 0 4px;
+  font-size: 18px;
+  color: #4ecdc4;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.tarjeta-estreno p {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: #bbb;
+}
+
+.estreno-badge {
+  display: inline-block;
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
+.boton-trailer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  color: white;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.boton-trailer::before {
+  content: '▶';
+  margin-right: 8px;
+  font-size: 12px;
+}
+
+.boton-trailer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 107, 107, 0.4);
+  background: linear-gradient(45deg, #ee5a24, #0fb9b1);
+}
+
+.boton-trailer:active {
+  transform: translateY(0);
+}
+
+/* Estilos para filtros de género */
+.filtros-genero {
+  padding: 20px 30px;
+  background: #1a1a2e;
+  border-bottom: 2px solid #4ecdc4;
+}
+
+.filtros-genero h3 {
+  color: #4ecdc4;
+  margin: 0 0 15px;
+  font-size: 18px;
+}
+
+.botones-genero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.boton-genero {
+  padding: 8px 16px;
+  background: #2c2c54;
+  color: #fff;
+  border: 2px solid #444;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.boton-genero:hover {
+  background: #3c3c64;
+  border-color: #4ecdc4;
+  transform: translateY(-2px);
+}
+
+.boton-genero.activo {
+  background: #4ecdc4;
+  color: #000;
+  border-color: #4ecdc4;
+  font-weight: bold;
+}
+
+.contador-peliculas {
+  color: #ccc;
+  font-size: 14px;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Estilos adicionales para estrenos */
+.fecha-estreno {
+  color: #ff6b6b !important;
+  font-weight: bold;
+  font-size: 12px !important;
+  margin: 4px 0 !important;
+}
+
+.descripcion-estreno {
+  color: #aaa !important;
+  font-size: 11px !important;
+  line-height: 1.3;
+  margin: 8px 0 !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.genero-con-estilo {
+  padding: 4px 8px !important;
+  border-radius: 12px !important;
+  font-weight: bold !important;
+  font-size: 12px !important;
+  margin: 8px 0 !important;
+  display: inline-block !important;
+}
+
+/* Clases dinámicas para géneros */
+.genero-accion {
+  background: linear-gradient(45deg, #ff5722, #e64a19) !important;
+  color: white !important;
+  box-shadow: 0 2px 8px rgba(255, 87, 34, 0.3) !important;
+}
+
+.genero-comedia {
+  background: linear-gradient(45deg, #ffc107, #ffeb3b) !important;
+  color: black !important;
+  box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3) !important;
+}
+
+.genero-drama {
+  background: linear-gradient(45deg, #9c27b0, #e91e63) !important;
+  color: white !important;
+  box-shadow: 0 2px 8px rgba(156, 39, 176, 0.3) !important;
+}
+
+.genero-terror {
+  background: linear-gradient(45deg, #424242, #616161) !important;
+  color: white !important;
+  box-shadow: 0 2px 8px rgba(66, 66, 66, 0.3) !important;
+}
+
+.genero-ciencia-ficcion {
+  background: linear-gradient(45deg, #2196f3, #03a9f4) !important;
+  color: white !important;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3) !important;
+}
+
+.genero-animacion {
+  background: linear-gradient(45deg, #e91e63, #f06292) !important;
+  color: white !important;
+  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.3) !important;
+}
+
+.genero-aventura {
+  background: linear-gradient(45deg, #4caf50, #8bc34a) !important;
+  color: white !important;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3) !important;
+}
+
+.genero-familia {
+  background: linear-gradient(45deg, #ff9800, #ffb74d) !important;
+  color: white !important;
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.3) !important;
+}
+
+.genero-default {
+  background: linear-gradient(45deg, #607d8b, #90a4ae) !important;
+  color: white !important;
+  box-shadow: 0 2px 8px rgba(96, 125, 139, 0.3) !important;
+}
+
+/* Clases dinámicas para botones de tráiler según género */
+.boton-accion {
+  background: linear-gradient(45deg, #ff5722, #e64a19) !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.4) !important;
+}
+
+.boton-accion:hover {
+  background: linear-gradient(45deg, #e64a19, #d84315) !important;
+  transform: translateY(-2px) !important;
+}
+
+.boton-comedia {
+  background: linear-gradient(45deg, #ffc107, #ffeb3b) !important;
+  color: black !important;
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4) !important;
+}
+
+.boton-comedia:hover {
+  background: linear-gradient(45deg, #ffeb3b, #fff176) !important;
+  transform: translateY(-2px) !important;
+}
+
+.boton-drama {
+  background: linear-gradient(45deg, #9c27b0, #e91e63) !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(156, 39, 176, 0.4) !important;
+}
+
+.boton-drama:hover {
+  background: linear-gradient(45deg, #e91e63, #f06292) !important;
+  transform: translateY(-2px) !important;
+}
+
+.boton-terror {
+  background: linear-gradient(45deg, #424242, #616161) !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(66, 66, 66, 0.4) !important;
+}
+
+.boton-terror:hover {
+  background: linear-gradient(45deg, #616161, #757575) !important;
+  transform: translateY(-2px) !important;
+}
+
+.boton-ciencia-ficcion {
+  background: linear-gradient(45deg, #2196f3, #03a9f4) !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4) !important;
+}
+
+.boton-ciencia-ficcion:hover {
+  background: linear-gradient(45deg, #03a9f4, #29b6f6) !important;
+  transform: translateY(-2px) !important;
+}
+
+.boton-animacion {
+  background: linear-gradient(45deg, #e91e63, #f06292) !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.4) !important;
+}
+
+.boton-animacion:hover {
+  background: linear-gradient(45deg, #f06292, #f48fb1) !important;
+  transform: translateY(-2px) !important;
+}
+
+.boton-aventura {
+  background: linear-gradient(45deg, #4caf50, #8bc34a) !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4) !important;
+}
+
+.boton-aventura:hover {
+  background: linear-gradient(45deg, #8bc34a, #aed581) !important;
+  transform: translateY(-2px) !important;
+}
+
+.boton-familia {
+  background: linear-gradient(45deg, #ff9800, #ffb74d) !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.4) !important;
+}
+
+.boton-familia:hover {
+  background: linear-gradient(45deg, #ffb74d, #ffcc80) !important;
+  transform: translateY(-2px) !important;
+}
+
+.boton-default {
+  background: linear-gradient(45deg, #607d8b, #90a4ae) !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(96, 125, 139, 0.4) !important;
+}
+
+.boton-default:hover {
+  background: linear-gradient(45deg, #90a4ae, #b0bec5) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Estilos para loading */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 30px;
+  text-align: center;
+  min-height: 300px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #333;
+  border-top: 4px solid #4ecdc4;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-container h3 {
+  color: #4ecdc4;
+  margin: 0 0 10px;
+  font-size: 24px;
+}
+
+.loading-container p {
+  color: #ccc;
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .estrenos {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  .filtros-genero {
+    padding: 15px 20px;
+  }
+  
+  .botones-genero {
+    gap: 8px;
+  }
+  
+  .boton-genero {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}

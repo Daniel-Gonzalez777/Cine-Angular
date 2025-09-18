@@ -1,0 +1,98 @@
+<div class="pagina">
+  <div class="compra">
+    <div class="caja">
+      <h2 class="titulo">Comprar Boletas</h2>
+      
+      <form (ngSubmit)="comprarBoletas()" class="formulario">
+        
+        <div class="campo">
+          <label for="nombre">Nombre completo</label>
+          <input 
+            type="text" 
+            id="nombre"
+            placeholder="Tu nombre completo"
+            [value]="nombreCompleto()"
+            (input)="nombreCompleto.set($any($event.target).value)"
+            required>
+        </div>
+
+        <div class="campo">
+          <label for="email">Email</label>
+          <input 
+            type="email" 
+            id="email"
+            placeholder="tu@email.com"
+            [value]="email()"
+            (input)="email.set($any($event.target).value)"
+            required>
+        </div>
+
+        <div class="campo">
+          <label for="telefono">Teléfono</label>
+          <input 
+            type="tel" 
+            id="telefono"
+            placeholder="+57 "
+            [value]="telefono()"
+            (input)="telefono.set($any($event.target).value)"
+            required>
+        </div>
+
+        <div class="campo">
+          <label for="cantidad">Cantidad de boletas</label>
+          <select 
+            id="cantidad" 
+            [value]="cantidadBoletas()"
+            (change)="onCantidadBoletasChange($event)"
+            required>
+            <option *ngFor="let opcion of opcionesBoletas()" [value]="opcion.cantidad">
+              {{ opcion.texto }}
+            </option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="cine">Cine</label>
+          <select 
+            id="cine" 
+            [value]="cineSeleccionado()"
+            (change)="onCineChange($event)"
+            required>
+            <option *ngFor="let cine of cines()" [value]="cine.id">
+              {{ cine.nombre }}
+            </option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="horario">Horario</label>
+          <select 
+            id="horario" 
+            [value]="horarioSeleccionado()"
+            (change)="onHorarioChange($event)"
+            required>
+            <option *ngFor="let horario of horarios()" [value]="horario.id">
+              {{ horario.hora }}
+            </option>
+          </select>
+        </div>
+
+        <div class="total" *ngIf="precioTotal() > 0">
+          <strong>Total a pagar: ${{ precioTotal().toLocaleString('es-CO') }}</strong>
+        </div>
+
+        <button 
+          type="submit" 
+          class="boton"
+          [disabled]="!formularioValido()">
+          Comprar Boletas
+        </button>
+        
+        <div class="volver">
+          <a routerLink="/cartelera" class="link">← Volver a la cartelera</a>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+</div>

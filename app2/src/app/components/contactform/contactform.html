@@ -1,0 +1,15 @@
+<div class="contacto">
+  <h2>Contáctanos</h2>
+
+  <input type="text" placeholder="Tu nombre completo" [(ngModel)]="nombre">
+  <input type="email" placeholder="tu@email.com" [(ngModel)]="email">
+  <input type="tel" placeholder="+57 " [(ngModel)]="telefono">
+
+  <select [(ngModel)]="asunto">
+    <option *ngFor="let opcion of opcionesAsunto()">{{ opcion }}</option>
+  </select>
+
+  <textarea placeholder="Escribe tu mensaje aquí..." rows="4" [(ngModel)]="mensaje"></textarea>
+
+  <button (click)="enviarMensaje()">Enviar Mensaje</button>
+</div>

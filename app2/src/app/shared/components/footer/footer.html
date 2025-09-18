@@ -1,0 +1,25 @@
+<footer class="footer">
+  <div class="footer-main">
+
+    <div class="footer-logo">
+      🎬 CineApp
+    </div>
+
+    <div class="footer-links">
+      <a routerLink="/contacto">Contactanos</a>
+    </div>
+
+    <div class="footer-social">
+      <a [href]="facebookUrl()" target="_blank"><div class="imgg"><img [src]="facebookImg()" class="img"></div></a>
+      <a [href]="instagramUrl()" target="_blank"> <div class="imgg"><img [src]="instagramImg()" class="img"></div></a>
+      <a [href]="twitterUrl()" target="_blank"><div class="imgg"><img [src]="twitterImg()" class="img"></div></a>
+    </div>
+
+
+  </div>
+  
+  <div class="footer-bottom">
+    <p>{{ derechos() }}</p>
+    <p>{{ desarrollador() }}</p>
+  </div>
+</footer>
